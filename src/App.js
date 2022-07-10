@@ -1,7 +1,5 @@
-
-import './App.css';
-
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import './App.css';
 import Login from './components/Login';
 
 function App() {
@@ -9,8 +7,7 @@ function App() {
     <div className="App">
      <Router>
       <Routes>
-        <Route exect path="/">
-          <Login />
+        <Route  path="/"  element={<Login />}>
         </Route>
       </Routes>
      </Router>
