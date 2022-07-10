@@ -20,6 +20,7 @@ const Login = (props) => {
                 <Form>
                     <Google>
                         <img src='/images/google.svg' alt=''/>
+                        Sign in with Google
                     </Google>
                 </Form>
             </Section>
@@ -137,6 +138,21 @@ const Form = styled.div`
 `;
 
 const Google = styled.button`
-
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    align-items: center;
+    height: 56px;
+    width: 100%;
+    border-radius: 28px;
+    vertical-align: middle;
+    z-index: 0;
+    transition-duration: 167ms;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.6);
+    &:hover {
+        background-color: rgba(207, 207, 207, 0.25);
+        color: rgba(0, 0, 0, 0.75);
+    }
 `;
 export default Login;
