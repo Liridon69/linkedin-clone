@@ -6,7 +6,7 @@ const Header = (props) => {
             <Content>
                 <Logo>
                     <a href="/home">
-                        <img src="/images/home-logo.svg" alt=""/>
+                        <img src="/images/home-logo.svg" alt="home"/>
                     </a>
                 </Logo>
                 <Search>
@@ -14,57 +14,57 @@ const Header = (props) => {
                         <input type="text" placeholder="Search" />
                     </div>
                     <SearchIcon>
-                        <img src="/images/search-icon.svg" />
+                        <img src="/images/search-icon.svg" alt="icon"/>
                     </SearchIcon>
                 </Search>
                 <Nav>
                     <NavListWrap>
                         <NavList className="active">
-                            <a>
-                                <img src="/images/nav-home.svg" alt="" />
+                            <a href="">
+                                <img src="/images/nav-home.svg" alt="home" />
                                 <span>Home</span>
                             </a>
                         </NavList>
                         <NavList>
-                            <a>
-                                <img src="/images/nav-network.svg" alt="" />
+                            <a href="">
+                                <img src="/images/nav-network.svg" alt="network" />
                                 <span>My Network</span>
                             </a>
                         </NavList>
                         <NavList>
-                            <a>
-                                <img src="/images/nav-jobs.svg" alt="" />
+                            <a href="">
+                                <img src="/images/nav-jobs.svg" alt="jobs" />
                                 <span>Jobs</span>
                             </a>
                         </NavList>
                         <NavList>
-                            <a>
-                                <img src="/images/nav-messaging.svg" alt="" />
+                            <a href="">
+                                <img src="/images/nav-messaging.svg" alt="messaging" />
                                 <span>Messaging</span>
                             </a>
                         </NavList>
                         <NavList>
-                            <a>
-                                <img src="/images/nav-notifications.svg" alt="" />
+                            <a href="">
+                                <img src="/images/nav-notifications.svg" alt="notifications" />
                                 <span>Notifications</span>
                             </a>
                         </NavList>
                         <User>
-                            <a>
-                                <img src="/images/user.svg" alt="" />
+                            <a href="">
+                                <img src="/images/user.svg" alt="user" />
                                 <span>Me</span>
-                                <img src="/images/down-icon.svg" alt="" />
+                                <img src="/images/down-icon.svg" alt="down-icon" />
                             </a>
                             <SignOut>
                                 <a>Sign Out</a>
                             </SignOut>
                         </User>
                         <Work>
-                            <a>
-                                <img src="/images/nav-work.svg" alt="" />
+                            <a href="">
+                                <img src="/images/nav-work.svg" alt="work" />
                                 <span>
                                     Work
-                                    <img src="/images/down-icon.svg" alt="" />
+                                    <img src="/images/down-icon.svg" alt="down-icon" />
                                 </span>
                             </a>
                         </Work>
@@ -149,23 +149,22 @@ const Nav = styled.nav`
 `;
 
 const NavListWrap = styled.ul`
-    display: flex;
-    flex-wrap: nowrap;
-    list-style-type: none;
-
-    .active {
-        span:align{
-            content: "";
-            transform: scaleX(1);
-            border-bottom: 2px solid var(--white, #fff);
-            border: 0;
-            left: 0;
-            position: absolute;
-            transition: transform 0.2s ease-in-out;
-            width: 100%;
-            border-color: rgba(0, 0, 0, 0.9);
-        }
+  display: flex;
+  flex-wrap: nowrap;
+  list-style-type: none;
+  .active {
+    span:after {
+      content: "";
+      transform: scaleX(1);
+      border-bottom: 2px solid var(--white, #fff);
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      transition: transform 0.2s ease-in-out;
+      width: 100%;
+      border-color: rgba(0, 0, 0, 0.9);
     }
+  }
 `;
 
 const NavList = styled.li`
@@ -215,30 +214,29 @@ const SignOut = styled.div`
 `;
 
 const User = styled(NavList)`
-    /* a > svg {
-        width: 24px;
-        border-radius: 50%;
-    } */
-    a > img {
-        width: 24px;
-        height:  24px;
-        border-radius: 50%;
+  a > svg {
+    width: 24px;
+    border-radius: 50%;
+  }
+  a > img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+  }
+  span {
+    display: flex;
+    align-items: center;
+  }
+  &:hover {
+    ${SignOut} {
+      align-items: center;
+      display: flex;
+      justify-content: center;
     }
-    span {
-        display:flex;
-        align-items:  center;
-    }
-    &:hover{
-        ${SignOut}{
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-    }
+  }
 `;
 const Work = styled(User)`
-    border-left: 1px solid rgba(0, 0, 0, 0.08);
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
 `;
-
 
 export default Header;
